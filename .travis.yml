@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.8
+- 3.7
+- 3.6
+- 3.5
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: panagiks
+  password:
+    secure: eY436x/bhElYqF5OVejTDN1xKj5L4+DGCGyabgG012sDSDWSGPV7Mwl+pdjLNqUahilj6iqgwNUm1MgAoYjnq+si2A7wOqzAFgcTVkLG2Ys0/ODiKwpw9dZRie1D9T9CVz1Za6Ru+HUo4AOgHM5JnuT8pB1AQ+ZJhQ9ZEoE/BrqwGQ8oT0hZGjT11rSE5bbFCDJb8YtKza25FEssCRmQw20GuUfeGfU5fo5kbM/jPYuwUxtQIe8P6IqG3XZpBMXkpZPUaq84t95IqJxD19fnK21PXV9aXmwas9mVVZGLSyj3mh4eG8Gd7RU3pwd0a4zB7V/veFkWBLUFnSALeJMYtLn+8tXCfKnoiyHCAqox8iU9NqnmkvEZ7zHGrytxZMppzhvhGDbT2Gx2JpN7Z2Bym7hUUm2tpNDQxoPKQ67rdpoyBHCY22JbbuDD9dHDkrEb6+SwAPKadmlvU07SmXVOsi7yDrMABjr8zBb5/HAa3qZ4I56eCZFn7D3Ajz3E/S6WiB+ye+a/ywEWh9jceHYz/tvR557PYscZ0JLBOtM5TrpYg/QNzkcW4Woy3lUvMCNjlU7NNWWFa5LcuM9p+qtQ6gxzpxVba2ojZkBzLBeeQYM0B45+62prSJvDdmSLracSwJT2EuldufFyY7w41MKSNFIqIoq1OlHxlFfkTjYpkrw=
+  on:
+    tags: true
+    repo: panagiks/opium
+    python: 3.8
