@@ -28,6 +28,11 @@ While it doesn't (yet) aggregate the varius metrics it gathers the metrics from 
 on a specific OKD project and serves them to a single /metrics endpoint. This way it allows for easier gathering
 of per-pod metrics.
 
+Of course, given no real aggregation is happening, it makes sense that your metrics should contain some unique label
+value to differentiate the same measurements from different pods. The contents of the HOSTNAME env variable are usually
+a good fit for the value of such a label since they will be unique (within a project). This way 'true' aggregation can happen
+at a later stage (i.e. with a sum across all instances while graphing the values).
+
 Configuration
 -------------
 
